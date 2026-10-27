@@ -21,6 +21,19 @@
   a:hover{text-decoration:underline}
   .wrap{max-width:960px;margin:0 auto;padding:0 24px}
 
+  header.hero{position:relative;overflow:hidden}
+  header.hero .wrap{position:relative;z-index:1}
+  .hero-art{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .sec-title h2{display:flex;align-items:center;gap:10px}
+  .sec-title h2 .icon{width:26px;height:26px;flex:none}
+  .titem h3 .icon{width:20px;height:20px;flex:none;align-self:center}
+  .pub-chart{background:var(--card);border:1px solid var(--border);border-radius:12px;
+             padding:18px 22px 14px;margin-bottom:22px;box-shadow:0 1px 3px rgba(20,40,60,.05)}
+  .pub-chart .cap{font-size:.92rem;color:var(--muted);margin-bottom:12px;font-weight:600}
+  .pub-chart svg{width:100%;height:auto;display:block}
+  .pub-chart .bar{fill:var(--accent);transition:fill .15s}
+  .pub-chart .bar:hover{fill:var(--gold)}
+
   /* ---------- nav ---------- */
   nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
       backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
@@ -154,6 +167,7 @@
 </nav>
 
 <header class="hero" id="about">
+<svg class="hero-art" viewBox="0 0 860 430" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMaxYMid slice"><line x1="680" y1="223" x2="764" y2="185" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="680" y1="223" x2="609" y2="335" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="680" y1="223" x2="737" y2="91" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="680" y1="223" x2="672" y2="117" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="680" y1="223" x2="636" y2="196" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="680" y1="223" x2="789" y2="324" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="680" y1="223" x2="526" y2="270" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="680" y1="223" x2="583" y2="343" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="764" y1="185" x2="737" y2="91" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="764" y1="185" x2="672" y2="117" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="764" y1="185" x2="776" y2="78" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="764" y1="185" x2="636" y2="196" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="764" y1="185" x2="789" y2="324" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="764" y1="185" x2="821" y2="122" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="609" y1="335" x2="478" y2="277" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="609" y1="335" x2="510" y2="282" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="609" y1="335" x2="636" y2="196" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="609" y1="335" x2="526" y2="270" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="609" y1="335" x2="583" y2="343" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="737" y1="91" x2="672" y2="117" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="737" y1="91" x2="606" y2="33" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="737" y1="91" x2="776" y2="78" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="737" y1="91" x2="636" y2="196" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="737" y1="91" x2="821" y2="122" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="672" y1="117" x2="606" y2="33" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="672" y1="117" x2="776" y2="78" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="672" y1="117" x2="636" y2="196" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="672" y1="117" x2="536" y2="55" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="672" y1="117" x2="557" y2="57" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="672" y1="117" x2="539" y2="73" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="672" y1="117" x2="821" y2="122" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="478" y1="277" x2="510" y2="282" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="478" y1="277" x2="487" y2="180" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="478" y1="277" x2="526" y2="270" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="478" y1="277" x2="583" y2="343" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="510" y1="282" x2="487" y2="180" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="510" y1="282" x2="636" y2="196" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="510" y1="282" x2="526" y2="270" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="510" y1="282" x2="583" y2="343" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="487" y1="180" x2="636" y2="196" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="487" y1="180" x2="526" y2="270" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="487" y1="180" x2="536" y2="55" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="487" y1="180" x2="557" y2="57" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="487" y1="180" x2="539" y2="73" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="606" y1="33" x2="536" y2="55" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="606" y1="33" x2="557" y2="57" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="606" y1="33" x2="539" y2="73" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="776" y1="78" x2="821" y2="122" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="636" y1="196" x2="526" y2="270" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="636" y1="196" x2="557" y2="57" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="636" y1="196" x2="583" y2="343" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="636" y1="196" x2="539" y2="73" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="526" y1="270" x2="583" y2="343" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="536" y1="55" x2="557" y2="57" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="536" y1="55" x2="539" y2="73" stroke="rgba(255,255,255,.14)" stroke-width="1"/><line x1="557" y1="57" x2="539" y2="73" stroke="rgba(255,255,255,.14)" stroke-width="1"/><circle cx="680" cy="223" r="2.9" fill="rgba(255,255,255,.30)"/><circle cx="764" cy="185" r="1.7" fill="rgba(255,255,255,.30)"/><circle cx="609" cy="335" r="3.3" fill="rgba(255,255,255,.30)"/><circle cx="737" cy="91" r="3.0" fill="rgba(255,255,255,.30)"/><circle cx="672" cy="117" r="4.2" fill="rgba(255,255,255,.30)"/><circle cx="478" cy="277" r="2.5" fill="rgba(255,255,255,.30)"/><circle cx="510" cy="282" r="4.2" fill="rgba(255,255,255,.30)"/><circle cx="487" cy="180" r="4.0" fill="rgba(255,255,255,.30)"/><circle cx="606" cy="33" r="3.2" fill="rgba(255,255,255,.30)"/><circle cx="776" cy="78" r="4.1" fill="rgba(255,255,255,.30)"/><circle cx="636" cy="196" r="3.6" fill="rgba(255,255,255,.30)"/><circle cx="789" cy="324" r="3.3" fill="rgba(255,255,255,.30)"/><circle cx="526" cy="270" r="4.2" fill="rgba(255,255,255,.30)"/><circle cx="536" cy="55" r="4.3" fill="rgba(255,255,255,.30)"/><circle cx="557" cy="57" r="4.2" fill="rgba(255,255,255,.30)"/><circle cx="583" cy="343" r="2.3" fill="rgba(255,255,255,.30)"/><circle cx="539" cy="73" r="1.9" fill="rgba(255,255,255,.30)"/><circle cx="821" cy="122" r="2.8" fill="rgba(255,255,255,.30)"/></svg>
   <div class="wrap">
     <h1><span data-i18n="hName">LIU Ming</span> <span style="font-size:1.2rem;font-weight:normal" data-i18n="hDegree">(Ph.D.)</span></h1>
     <div class="role" data-i18n="hRole">Associate Professor</div>
@@ -178,7 +192,7 @@
 
   <!-- ==================== EDUCATION ==================== -->
   <section id="education">
-    <div class="sec-title"><h2 data-i18n="sEdu">Education</h2><div class="line"></div></div>
+    <div class="sec-title"><h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.7 3 3 6 3s6-1.3 6-3v-4.5"/><path d="M22 8v5"/></svg><span data-i18n="sEdu">Education</span></h2><div class="line"></div></div>
     <div class="timeline">
       <div class="titem">
         <h3><span data-i18n="tEdu1">The Hong Kong Polytechnic University</span> <span class="date" data-i18n="dtEdu1">Sept. 2010 – July 2014</span></h3>
@@ -199,7 +213,7 @@
 
   <!-- ==================== EXPERIENCE ==================== -->
   <section id="experience">
-    <div class="sec-title"><h2 data-i18n="sExp">Work Experience</h2><div class="line"></div></div>
+    <div class="sec-title"><h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg><span data-i18n="sExp">Work Experience</span></h2><div class="line"></div></div>
     <div class="timeline">
       <div class="titem">
         <h3><span data-i18n="tExp1">The Hong Kong Polytechnic University</span> <span class="date" data-i18n="dtExp1">Oct. 2020 – present</span></h3>
@@ -226,7 +240,7 @@
 
   <!-- ==================== PROJECTS ==================== -->
   <section id="projects">
-    <div class="sec-title"><h2 data-i18n="sProj">Research Projects</h2><div class="line"></div></div>
+    <div class="sec-title"><h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg><span data-i18n="sProj">Research Projects</span></h2><div class="line"></div></div>
     <p class="sec-sub" data-i18n="subProj">All projects listed below were carried out as Principal Investigator.</p>
     <div class="projects">
       <div class="pcard">
@@ -259,7 +273,9 @@
 
   <!-- ==================== PUBLICATIONS ==================== -->
   <section id="publications">
-    <div class="sec-title"><h2 data-i18n="sPub">Publications</h2><div class="line"></div></div>
+    <div class="sec-title"><h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg><span data-i18n="sPub">Publications</span></h2><div class="line"></div></div>
+    <div class="pub-chart"><p class="cap"><span data-i18n="chartT">Publications by year</span> &middot; 2013&ndash;2026</p><svg viewBox="0 0 860 372" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid meet"><text x="60" y="21" text-anchor="end" font-size="13" fill="#5b6b7a">2013</text><rect class="bar" x="70" y="8" width="68" height="16" rx="3"><title>2013: 1</title></rect><text x="145.8181818181818" y="21" font-size="12" font-weight="bold" fill="#1a4b7a">1</text><text x="60" y="47" text-anchor="end" font-size="13" fill="#5b6b7a">2014</text><rect class="bar" x="70" y="34" width="203" height="16" rx="3"><title>2014: 3</title></rect><text x="281.45454545454544" y="47" font-size="12" font-weight="bold" fill="#1a4b7a">3</text><text x="60" y="73" text-anchor="end" font-size="13" fill="#5b6b7a">2015</text><rect class="bar" x="70" y="60" width="203" height="16" rx="3"><title>2015: 3</title></rect><text x="281.45454545454544" y="73" font-size="12" font-weight="bold" fill="#1a4b7a">3</text><text x="60" y="99" text-anchor="end" font-size="13" fill="#5b6b7a">2016</text><rect class="bar" x="70" y="86" width="136" height="16" rx="3"><title>2016: 2</title></rect><text x="213.63636363636363" y="99" font-size="12" font-weight="bold" fill="#1a4b7a">2</text><text x="60" y="125" text-anchor="end" font-size="13" fill="#5b6b7a">2017</text><rect class="bar" x="70" y="112" width="203" height="16" rx="3"><title>2017: 3</title></rect><text x="281.45454545454544" y="125" font-size="12" font-weight="bold" fill="#1a4b7a">3</text><text x="60" y="151" text-anchor="end" font-size="13" fill="#5b6b7a">2018</text><rect class="bar" x="70" y="138" width="68" height="16" rx="3"><title>2018: 1</title></rect><text x="145.8181818181818" y="151" font-size="12" font-weight="bold" fill="#1a4b7a">1</text><text x="60" y="177" text-anchor="end" font-size="13" fill="#5b6b7a">2019</text><rect class="bar" x="70" y="164" width="136" height="16" rx="3"><title>2019: 2</title></rect><text x="213.63636363636363" y="177" font-size="12" font-weight="bold" fill="#1a4b7a">2</text><text x="60" y="203" text-anchor="end" font-size="13" fill="#5b6b7a">2020</text><rect class="bar" x="70" y="190" width="68" height="16" rx="3"><title>2020: 1</title></rect><text x="145.8181818181818" y="203" font-size="12" font-weight="bold" fill="#1a4b7a">1</text><text x="60" y="229" text-anchor="end" font-size="13" fill="#5b6b7a">2021</text><rect class="bar" x="70" y="216" width="203" height="16" rx="3"><title>2021: 3</title></rect><text x="281.45454545454544" y="229" font-size="12" font-weight="bold" fill="#1a4b7a">3</text><text x="60" y="255" text-anchor="end" font-size="13" fill="#5b6b7a">2022</text><rect class="bar" x="70" y="242" width="610" height="16" rx="3"><title>2022: 9</title></rect><text x="688.3636363636363" y="255" font-size="12" font-weight="bold" fill="#1a4b7a">9</text><text x="60" y="281" text-anchor="end" font-size="13" fill="#5b6b7a">2023</text><rect class="bar" x="70" y="268" width="203" height="16" rx="3"><title>2023: 3</title></rect><text x="281.45454545454544" y="281" font-size="12" font-weight="bold" fill="#1a4b7a">3</text><text x="60" y="307" text-anchor="end" font-size="13" fill="#5b6b7a">2024</text><rect class="bar" x="70" y="294" width="203" height="16" rx="3"><title>2024: 3</title></rect><text x="281.45454545454544" y="307" font-size="12" font-weight="bold" fill="#1a4b7a">3</text><text x="60" y="333" text-anchor="end" font-size="13" fill="#5b6b7a">2025</text><rect class="bar" x="70" y="320" width="746" height="16" rx="3"><title>2025: 11</title></rect><text x="824.0" y="333" font-size="12" font-weight="bold" fill="#1a4b7a">11</text><text x="60" y="359" text-anchor="end" font-size="13" fill="#5b6b7a">2026</text><rect class="bar" x="70" y="346" width="339" height="16" rx="3"><title>2026: 5</title></rect><text x="417.09090909090907" y="359" font-size="12" font-weight="bold" fill="#1a4b7a">5</text></svg></div>
+
     <div class="pub-legend" style="margin-bottom:8px"><span data-i18n="legPdf" style="color:var(--gold)">PDF attached where available</span></div>
     <div class="pub-legend">
       <span data-i18n="legEn">Journal articles in English</span>
@@ -335,13 +351,13 @@
 
   <!-- ==================== CONTACT ==================== -->
   <section id="contact">
-    <div class="sec-title"><h2 data-i18n="sContact">Contact</h2><div class="line"></div></div>
+    <div class="sec-title"><h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><span data-i18n="sContact">Contact</span></h2><div class="line"></div></div>
     <div class="timeline" style="border:none;padding-left:0;margin-left:0">
-      <div class="titem" style="padding-bottom:8px"><h3><span data-i18n="hEmail">Email</span> <span class="date" style="display:none"></span></h3>
+      <div class="titem" style="padding-bottom:8px"><h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><span data-i18n="hEmail">Email</span> <span class="date" style="display:none"></span></h3>
         <div class="detail"><a href="mailto:ming1.liu@polyu.edu.hk">ming1.liu@polyu.edu.hk</a></div></div>
-      <div class="titem" style="padding-bottom:8px"><h3><span data-i18n="hMobile">Mobile</span></h3>
+      <div class="titem" style="padding-bottom:8px"><h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2h10a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M11 18h2"/></svg><span data-i18n="hMobile">Mobile</span></h3>
         <div class="detail" data-i18n="hMobileV">+852 6677 4907</div></div>
-      <div class="titem" style="padding-bottom:8px"><h3><span data-i18n="hAddress">Address</span></h3>
+      <div class="titem" style="padding-bottom:8px"><h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-i18n="hAddress">Address</span></h3>
         <div class="detail" data-i18n="hAddressV">HHB807, Department of Language Science and Technology, The Hong Kong Polytechnic University, Hung Hom, Hong Kong</div></div>
     </div>
   </section>
@@ -445,6 +461,7 @@
     legCh:{en:"Book chapters", zh:"书籍章节"},
     legBk:{en:"Books", zh:"专著"},
     legPdf:{en:"PDF attached where available", zh:"附PDF全文（如有）"},
+    chartT:{en:"Publications by year", zh:"历年学术成果数量"},
     fAll:{en:"All", zh:"全部"},
     fEn:{en:"English articles", zh:"英文论文"},
     fCn:{en:"Chinese articles", zh:"中文论文"},
