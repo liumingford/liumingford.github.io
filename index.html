@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LIU Ming — Associate Professor, The Hong Kong Polytechnic University</title>
-<meta name="description" content="Personal website of LIU Ming, Associate Professor at the Department of Chinese and Bilingual Studies, The Hong Kong Polytechnic University. Research interests: critical discourse analysis, media studies, corpus linguistics.">
+<meta name="description" content="Personal website of LIU Ming (刘明), Associate Professor at the Department of Chinese and Bilingual Studies, The Hong Kong Polytechnic University. Research interests: critical discourse analysis, media studies, corpus linguistics.">
 <style>
   :root{
     --accent:#1a4b7a; --accent-light:#eef4fa; --accent-mid:#c5d8ea;
@@ -16,6 +16,7 @@
   body{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
        color:var(--text);background:var(--bg);line-height:1.65;font-size:16px}
   h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--accent)}
+  html[lang="zh-CN"] h1,html[lang="zh-CN"] h2,html[lang="zh-CN"] h3{font-family:Georgia,"STZhongsong","SimSun",serif}
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
   .wrap{max-width:960px;margin:0 auto;padding:0 24px}
@@ -25,9 +26,13 @@
       backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
   nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
   nav .brand{font-family:Georgia,serif;font-weight:bold;font-size:1.05rem;color:var(--accent)}
-  nav ul{display:flex;gap:4px;list-style:none}
+  nav ul{display:flex;gap:4px;list-style:none;align-items:center}
   nav a.navlink{display:block;padding:6px 12px;border-radius:6px;font-size:.92rem;color:var(--text)}
   nav a.navlink:hover{background:var(--accent-light);text-decoration:none;color:var(--accent)}
+  #langToggle{margin-left:6px;padding:5px 14px;border:1.5px solid var(--accent);border-radius:999px;
+              background:#fff;color:var(--accent);font-size:.85rem;cursor:pointer;font-weight:600;
+              transition:.15s;white-space:nowrap}
+  #langToggle:hover{background:var(--accent-light)}
 
   /* ---------- hero ---------- */
   header.hero{background:linear-gradient(135deg,#123a5e 0%,#1a4b7a 55%,#2a6597 100%);
@@ -119,6 +124,7 @@
     nav a.navlink{padding:6px 7px;font-size:.8rem}
     header.hero h1{font-size:2rem}
     #pubList li{flex-direction:row}
+    #langToggle{padding:4px 10px;font-size:.78rem}
   }
   @media print{
     nav,#pubToolsRow,footer{display:none}
@@ -133,33 +139,34 @@
   <div class="wrap">
     <div class="brand">LIU Ming</div>
     <ul>
-      <li><a class="navlink" href="#about">About</a></li>
-      <li><a class="navlink" href="#education">Education</a></li>
-      <li><a class="navlink" href="#experience">Experience</a></li>
-      <li><a class="navlink" href="#projects">Projects</a></li>
-      <li><a class="navlink" href="#publications">Publications</a></li>
-      <li><a class="navlink" href="#contact">Contact</a></li>
+      <li><a class="navlink" href="#about" data-i18n="nAbout">About</a></li>
+      <li><a class="navlink" href="#education" data-i18n="nEdu">Education</a></li>
+      <li><a class="navlink" href="#experience" data-i18n="nExp">Experience</a></li>
+      <li><a class="navlink" href="#projects" data-i18n="nProj">Projects</a></li>
+      <li><a class="navlink" href="#publications" data-i18n="nPub">Publications</a></li>
+      <li><a class="navlink" href="#contact" data-i18n="nContact">Contact</a></li>
+      <li><button id="langToggle" type="button" aria-label="Switch language">中文</button></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero" id="about">
   <div class="wrap">
-    <h1>LIU Ming <span style="font-size:1.2rem;font-weight:normal">(Ph.D.)</span></h1>
-    <div class="role">Associate Professor</div>
-    <div class="affil">Department of Chinese and Bilingual Studies, The Hong Kong Polytechnic University</div>
+    <h1><span data-i18n="hName">LIU Ming</span> <span style="font-size:1.2rem;font-weight:normal" data-i18n="hDegree">(Ph.D.)</span></h1>
+    <div class="role" data-i18n="hRole">Associate Professor</div>
+    <div class="affil" data-i18n="hAffil">Department of Chinese and Bilingual Studies, The Hong Kong Polytechnic University</div>
     <div class="chips">
-      <span class="chip">Critical discourse analysis</span>
-      <span class="chip">Media studies</span>
-      <span class="chip">Corpus linguistics</span>
-      <span class="chip">Sociolinguistics</span>
-      <span class="chip">Systemic functional linguistics</span>
-      <span class="chip">Intercultural communication</span>
+      <span class="chip" data-i18n="chip1">Critical discourse analysis</span>
+      <span class="chip" data-i18n="chip2">Media studies</span>
+      <span class="chip" data-i18n="chip3">Corpus linguistics</span>
+      <span class="chip" data-i18n="chip4">Sociolinguistics</span>
+      <span class="chip" data-i18n="chip5">Systemic functional linguistics</span>
+      <span class="chip" data-i18n="chip6">Intercultural communication</span>
     </div>
     <div class="contact-cards">
-      <div class="ccard"><b>Email</b><a href="mailto:ming1.liu@polyu.edu.hk">ming1.liu@polyu.edu.hk</a></div>
-      <div class="ccard"><b>Phone</b>+852 6677 4907</div>
-      <div class="ccard"><b>Office</b>HHB807, Hung Hom, Hong Kong</div>
+      <div class="ccard"><b data-i18n="cEmail">Email</b><a href="mailto:ming1.liu@polyu.edu.hk">ming1.liu@polyu.edu.hk</a></div>
+      <div class="ccard"><b data-i18n="cPhone">Phone</b><span data-i18n="cPhoneV">+852 6677 4907</span></div>
+      <div class="ccard"><b data-i18n="cOffice">Office</b><span data-i18n="cOfficeV">HHB807, Hung Hom, Hong Kong</span></div>
     </div>
   </div>
 </header>
@@ -168,100 +175,100 @@
 
   <!-- ==================== EDUCATION ==================== -->
   <section id="education">
-    <div class="sec-title"><h2>Education</h2><div class="line"></div></div>
+    <div class="sec-title"><h2 data-i18n="sEdu">Education</h2><div class="line"></div></div>
     <div class="timeline">
       <div class="titem">
-        <h3>The Hong Kong Polytechnic University <span class="date">Sept. 2010 – July 2014</span></h3>
-        <div class="detail">Ph.D., Linguistics</div>
-        <div class="thesis">Thesis: <i>China Daily as a Competing and Hybridized Discourse: A Discourse-Analytic Approach</i> &nbsp;·&nbsp; Supervisor: Prof. Doreen Wu</div>
+        <h3><span data-i18n="tEdu1">The Hong Kong Polytechnic University</span> <span class="date" data-i18n="dtEdu1">Sept. 2010 – July 2014</span></h3>
+        <div class="detail" data-i18n="dEdu1">Ph.D., Linguistics</div>
+        <div class="thesis" data-i18n="tEdu1t">Thesis: <i>China Daily as a Competing and Hybridized Discourse: A Discourse-Analytic Approach</i> &nbsp;·&nbsp; Supervisor: Prof. Doreen Wu</div>
       </div>
       <div class="titem">
-        <h3>Sun Yat-sen University <span class="date">Sept. 2007 – July 2009</span></h3>
-        <div class="detail">M.A., English Language and Literature</div>
-        <div class="thesis">Dissertation: <i>A Functional Analysis of English of-NGps</i> &nbsp;·&nbsp; Supervisor: Prof. Huang Guowen</div>
+        <h3><span data-i18n="tEdu2">Sun Yat-sen University</span> <span class="date" data-i18n="dtEdu2">Sept. 2007 – July 2009</span></h3>
+        <div class="detail" data-i18n="dEdu2">M.A., English Language and Literature</div>
+        <div class="thesis" data-i18n="tEdu2t">Dissertation: <i>A Functional Analysis of English of-NGps</i> &nbsp;·&nbsp; Supervisor: Prof. Huang Guowen</div>
       </div>
       <div class="titem">
-        <h3>Dalian University of Foreign Languages <span class="date">Sept. 2001 – July 2005</span></h3>
-        <div class="detail">B.A., English Language and Culture</div>
+        <h3><span data-i18n="tEdu3">Dalian University of Foreign Languages</span> <span class="date" data-i18n="dtEdu3">Sept. 2001 – July 2005</span></h3>
+        <div class="detail" data-i18n="dEdu3">B.A., English Language and Culture</div>
       </div>
     </div>
   </section>
 
   <!-- ==================== EXPERIENCE ==================== -->
   <section id="experience">
-    <div class="sec-title"><h2>Work Experience</h2><div class="line"></div></div>
+    <div class="sec-title"><h2 data-i18n="sExp">Work Experience</h2><div class="line"></div></div>
     <div class="timeline">
       <div class="titem">
-        <h3>The Hong Kong Polytechnic University <span class="date">Oct. 2020 – present</span></h3>
-        <div class="detail">Department of Chinese and Bilingual Studies — Associate Professor</div>
+        <h3><span data-i18n="tExp1">The Hong Kong Polytechnic University</span> <span class="date" data-i18n="dtExp1">Oct. 2020 – present</span></h3>
+        <div class="detail" data-i18n="dExp1">Department of Chinese and Bilingual Studies — Associate Professor</div>
       </div>
       <div class="titem">
-        <h3>Shanghai Jiao Tong University <span class="date">Mar. 2019 – Sept. 2020</span></h3>
-        <div class="detail">School of Foreign Languages — Associate Professor</div>
+        <h3><span data-i18n="tExp2">Shanghai Jiao Tong University</span> <span class="date" data-i18n="dtExp2">Mar. 2019 – Sept. 2020</span></h3>
+        <div class="detail" data-i18n="dExp2">School of Foreign Languages — Associate Professor</div>
       </div>
       <div class="titem">
-        <h3>Sun Yat-sen University <span class="date">Aug. 2014 – Feb. 2019</span></h3>
-        <div class="detail">School of International Studies — Assistant &amp; Associate Professor</div>
+        <h3><span data-i18n="tExp3">Sun Yat-sen University</span> <span class="date" data-i18n="dtExp3">Aug. 2014 – Feb. 2019</span></h3>
+        <div class="detail" data-i18n="dExp3">School of International Studies — Assistant &amp; Associate Professor</div>
       </div>
       <div class="titem">
-        <h3>Xi&rsquo;an International Studies University <span class="date">July 2009 – Aug. 2010</span></h3>
-        <div class="detail">Department of English — English teacher</div>
+        <h3><span data-i18n="tExp4">Xi&rsquo;an International Studies University</span> <span class="date" data-i18n="dtExp4">July 2009 – Aug. 2010</span></h3>
+        <div class="detail" data-i18n="dExp4">Department of English — English teacher</div>
       </div>
       <div class="titem">
-        <h3>Xuhai College, China University of Mining Technologies <span class="date">July 2005 – Aug. 2007</span></h3>
-        <div class="detail">English Department — English teacher</div>
+        <h3><span data-i18n="tExp5">Xuhai College, China University of Mining Technologies</span> <span class="date" data-i18n="dtExp5">July 2005 – Aug. 2007</span></h3>
+        <div class="detail" data-i18n="dExp5">English Department — English teacher</div>
       </div>
     </div>
   </section>
 
   <!-- ==================== PROJECTS ==================== -->
   <section id="projects">
-    <div class="sec-title"><h2>Research Projects</h2><div class="line"></div></div>
-    <p class="sec-sub">All projects listed below were carried out as Principal Investigator.</p>
+    <div class="sec-title"><h2 data-i18n="sProj">Research Projects</h2><div class="line"></div></div>
+    <p class="sec-sub" data-i18n="subProj">All projects listed below were carried out as Principal Investigator.</p>
     <div class="projects">
       <div class="pcard">
-        <div class="funder">General Research Fund, RGC of Hong Kong <span class="grant">#15614223</span></div>
-        <div class="ptitle">The politics of recontextualizing the Hong Kong Basic Law in news media: A corpus-assisted discourse study</div>
-        <div class="duration">January 2023 – December 2025</div>
+        <div class="funder"><span data-i18n="fP1">General Research Fund, RGC of Hong Kong</span> <span class="grant">#15614223</span></div>
+        <div class="ptitle" data-i18n="pT1">The politics of recontextualizing the Hong Kong Basic Law in news media: A corpus-assisted discourse study</div>
+        <div class="duration" data-i18n="dP1">January 2023 – December 2025</div>
       </div>
       <div class="pcard">
-        <div class="funder">National Social Science Fund of China <span class="grant">#17CYY065</span></div>
-        <div class="ptitle">A corpus-assisted discourse study of press representations of Hong Kong</div>
-        <div class="duration">June 2017 – December 2020</div>
+        <div class="funder"><span data-i18n="fP2">National Social Science Fund of China</span> <span class="grant">#17CYY065</span></div>
+        <div class="ptitle" data-i18n="pT2">A corpus-assisted discourse study of press representations of Hong Kong</div>
+        <div class="duration" data-i18n="dP2">June 2017 – December 2020</div>
       </div>
       <div class="pcard">
-        <div class="funder">MOE Project of Humanities and Social Sciences <span class="grant">#16YJC740046</span></div>
-        <div class="ptitle">A corpus-assisted discourse study of Western media&rsquo;s representations of Tibet</div>
-        <div class="duration">June 2016 – June 2019</div>
+        <div class="funder"><span data-i18n="fP3">MOE Project of Humanities and Social Sciences</span> <span class="grant">#16YJC740046</span></div>
+        <div class="ptitle" data-i18n="pT3">A corpus-assisted discourse study of Western media&rsquo;s representations of Tibet</div>
+        <div class="duration" data-i18n="dP3">June 2016 – June 2019</div>
       </div>
       <div class="pcard">
-        <div class="funder">Guangdong Department of Education, Degree &amp; Postgraduate Education Reform <span class="grant">#21000-18822160</span></div>
-        <div class="ptitle">International affairs oriented postgraduate education reform and practices</div>
-        <div class="duration">January 2016 – December 2017</div>
+        <div class="funder"><span data-i18n="fP4">Guangdong Department of Education, Degree &amp; Postgraduate Education Reform</span> <span class="grant">#21000-18822160</span></div>
+        <div class="ptitle" data-i18n="pT4">International affairs oriented postgraduate education reform and practices</div>
+        <div class="duration" data-i18n="dP4">January 2016 – December 2017</div>
       </div>
       <div class="pcard">
-        <div class="funder">Fundamental Research Funds for the Central Universities <span class="grant">#1409101-21000-31610105</span></div>
-        <div class="ptitle">Media representations of international crises: An intercultural perspective</div>
-        <div class="duration">January 2015 – December 2017</div>
+        <div class="funder"><span data-i18n="fP5">Fundamental Research Funds for the Central Universities</span> <span class="grant">#1409101-21000-31610105</span></div>
+        <div class="ptitle" data-i18n="pT5">Media representations of international crises: An intercultural perspective</div>
+        <div class="duration" data-i18n="dP5">January 2015 – December 2017</div>
       </div>
     </div>
   </section>
 
   <!-- ==================== PUBLICATIONS ==================== -->
   <section id="publications">
-    <div class="sec-title"><h2>Publications</h2><div class="line"></div></div>
+    <div class="sec-title"><h2 data-i18n="sPub">Publications</h2><div class="line"></div></div>
     <div class="pub-legend">
-      <span>Journal articles in English</span>
-      <span class="l-cn">Journal articles in Chinese</span>
-      <span class="l-ch">Book chapters</span>
-      <span class="l-bk">Books</span>
+      <span data-i18n="legEn">Journal articles in English</span>
+      <span class="l-cn" data-i18n="legCn">Journal articles in Chinese</span>
+      <span class="l-ch" data-i18n="legCh">Book chapters</span>
+      <span class="l-bk" data-i18n="legBk">Books</span>
     </div>
     <div class="pub-tools" id="pubToolsRow">
-      <button class="filter active" data-cat="all">All<span class="n" id="nAll"> (53)</span></button>
-      <button class="filter" data-cat="en">English articles<span class="n" id="nEn"> (36)</span></button>
-      <button class="filter" data-cat="cn">Chinese articles<span class="n" id="nCn"> (9)</span></button>
-      <button class="filter" data-cat="ch">Book chapters<span class="n" id="nCh"> (7)</span></button>
-      <button class="filter" data-cat="bk">Books<span class="n" id="nBk"> (1)</span></button>
+      <button class="filter active" data-cat="all"><span data-i18n="fAll">All</span><span class="n" id="nAll"> (53)</span></button>
+      <button class="filter" data-cat="en"><span data-i18n="fEn">English articles</span><span class="n" id="nEn"> (36)</span></button>
+      <button class="filter" data-cat="cn"><span data-i18n="fCn">Chinese articles</span><span class="n" id="nCn"> (9)</span></button>
+      <button class="filter" data-cat="ch"><span data-i18n="fCh">Book chapters</span><span class="n" id="nCh"> (7)</span></button>
+      <button class="filter" data-cat="bk"><span data-i18n="fBk">Books</span><span class="n" id="nBk"> (1)</span></button>
       <input type="text" id="pubSearch" placeholder="Search publications&hellip;" aria-label="Search publications">
     </div>
     <ul id="pubList">
@@ -279,7 +286,7 @@
       <li class="cat-en" data-cat="en"><span class="year">2024</span><span class="txt"><b>Liu, M</b>. (2024). Towards a ‘synergy’ of text mining and critical discourse analysis: A corpus-assisted discourse study of imagining Hong Kong’s relations to China in Hong Kong political discourse. Digital Scholarship in the Humanities. DOI: 10.1093/llc/fqae010</span></li>
       <li class="cat-en" data-cat="en"><span class="year">2024</span><span class="txt">Wang, Z., <b>Liu, M</b>., &amp; Liu, K. (2024). Utilizing machine learning techniques for classifying translated and non-translated corporate annual reports. Applied Artificial Intelligence, 38(1), 2340393. doi:10.1080/08839514.2024.2340393</span></li>
       <li class="cat-en" data-cat="en"><span class="year">2023</span><span class="txt"><b>Liu, M</b>. &amp; Cheng, Y.Q. (2023). Blessing or curse? Recontextualizing “996” in China’s overwork debate. Critical Discourse Studies. DOI: https://doi.org/10.1080/17405904.2023.2289448</span></li>
-      <li class="cat-en" data-cat="en"><span class="year">2024</span><span class="txt"><b>Liu, M</b>., &amp; Huang, J. (2024). Framing responsibilities for climate change in Chinese and American   newspapers: A corpus-assisted discourse study. Journalism, 25(8): 1792-1811.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2024</span><span class="txt"><b>Liu, M</b>., &amp; Huang, J. (2024). Framing responsibilities for climate change in Chinese and American   newspapers: A corpus-assisted discourse study. Journalism, 25(8): 1792-1811.</span></li>
       <li class="cat-en" data-cat="en"><span class="year">2023</span><span class="txt"><b>Liu, M</b>. (2023). Blame-avoiding strategies for a digital scandal: A critical discourse analysis of Mark Zuckerberg’s Congressional hearings. Pragmatics and Society. DOI: https://doi.org/10.1075/ps.21063.liu</span></li>
       <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>., Zhao, R.N. &amp; Ngai, C. (2022). Vaccines, media and politics: A corpus-assisted discourse study of press representations of the safety and efficacy of COVID-19 vaccines. PLoS One, 17(12): e0279500.</span></li>
       <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>., Zhao, R.N. &amp; Feng, J.Y. (2022). Gender performances on social media: A comparative study of three top key opinion leaders in China. Frontiers in Psychology. doi: 10.3389/fpsyg.2022.1046887</span></li>
@@ -315,23 +322,23 @@
       <li class="cat-ch" data-cat="ch"><span class="year">2025</span><span class="txt"><b>Liu, M</b>. &amp; Zhao, R.N. (2025). Gender performances of male and female politicians on social media: A corpus-assisted discourse study. In H.Q. Zhu, X.R. Liu &amp; D.B. Feng (eds.). Social Identity and Discourses in China’s Digital Communication.  London: Routledge.</span></li>
       <li class="cat-ch" data-cat="ch"><span class="year">n.d.</span><span class="txt"><b>Liu, M</b>. &amp; Huang, J.Y. <em>(Accepted)</em>. Incorporating text mining into critical discourse studies: A corpus-assisted discourse study of press representations of climate change in China. In B. Forchtner &amp; F. Zappettini (eds.). Handbook on Critical Discourse Studies. Edward Elgar.</span></li>
       <li class="cat-ch" data-cat="ch"><span class="year">n.d.</span><span class="txt"><b>Liu, M</b>. <em>(Accepted)</em>. Corpus-based analytic Methods (基于语料库的研究方法). In J.Y. Feng, D. WU &amp; S. Liang (eds.). Cross-cultural Corporate Discourse Studies (跨文化商务话语研究). Beijing: Foreign Language Teaching and Research Press.</span></li>
-      <li class="cat-ch" data-cat="ch"><span class="year">2022</span><span class="txt"><b>Liu, M</b>. (2022). Sociolinguistics in China. In The Oxford Research Encyclopedia of Linguistics. Oxford: Oxford University Press. doi: https://doi.org/10.1093/acrefore/9780199384655.013.914</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">2022</span><span class="txt"><b>Liu, M</b>. (2022). Sociolinguistics in China. In The Oxford Research Encyclopedia of Linguistics. Oxford: Oxford University Press. doi: https://doi.org/10.1093/acrefore/9780199384655.013.914</span></li>
       <li class="cat-ch" data-cat="ch"><span class="year">2021</span><span class="txt"><b>Liu, M</b>. (2021). One City, Two Stories: Competing Discursive Constructions of    Postcolonial Hong Kong in Chinese and American Newspapers. In J. Schmied, C. Chang, &amp; M. Hofmann (Eds.), Working with Discourses: Corpus and Systemic Functional Perspectives (pp. 143-160). Göttingen: Cuvillier Verlag.</span></li>
       <li class="cat-bk" data-cat="bk"><span class="year">2026</span><span class="txt">Huang, G.W., Zhao, R.H., <b>Liu, M</b>., Zhou, W.J. (In Press) (2026). Ecological Discourse Analysis in Chinese Context. Beijing: Higher Education Press.</span></li>
     </ul>
-    <p id="pubEmpty">No publications match your search.</p>
+    <p id="pubEmpty" data-i18n="pubEmpty">No publications match your search.</p>
   </section>
 
   <!-- ==================== CONTACT ==================== -->
   <section id="contact">
-    <div class="sec-title"><h2>Contact</h2><div class="line"></div></div>
+    <div class="sec-title"><h2 data-i18n="sContact">Contact</h2><div class="line"></div></div>
     <div class="timeline" style="border:none;padding-left:0;margin-left:0">
-      <div class="titem" style="padding-bottom:8px"><h3>Email <span class="date" style="display:none"></span></h3>
+      <div class="titem" style="padding-bottom:8px"><h3><span data-i18n="hEmail">Email</span> <span class="date" style="display:none"></span></h3>
         <div class="detail"><a href="mailto:ming1.liu@polyu.edu.hk">ming1.liu@polyu.edu.hk</a></div></div>
-      <div class="titem" style="padding-bottom:8px"><h3>Mobile</h3>
-        <div class="detail">+852 6677 4907</div></div>
-      <div class="titem" style="padding-bottom:8px"><h3>Address</h3>
-        <div class="detail">HHB807, Department of Language Science and Technology, The Hong Kong Polytechnic University, Hung Hom, Hong Kong</div></div>
+      <div class="titem" style="padding-bottom:8px"><h3><span data-i18n="hMobile">Mobile</span></h3>
+        <div class="detail" data-i18n="hMobileV">+852 6677 4907</div></div>
+      <div class="titem" style="padding-bottom:8px"><h3><span data-i18n="hAddress">Address</span></h3>
+        <div class="detail" data-i18n="hAddressV">HHB807, Department of Language Science and Technology, The Hong Kong Polytechnic University, Hung Hom, Hong Kong</div></div>
     </div>
   </section>
 
@@ -339,13 +346,124 @@
 
 <footer>
   <div class="wrap">
-    <div>&copy; 2026 LIU Ming, Ph.D. All rights reserved.</div>
-    <div>Last updated: August 2026</div>
+    <div data-i18n="fCopy">&copy; 2026 LIU Ming, Ph.D. All rights reserved.</div>
+    <div data-i18n="fUpdated">Last updated: August 2026</div>
   </div>
 </footer>
 
 <script>
 (function () {
+  /* ---------- i18n dictionary ---------- */
+  var I18N = {
+    nAbout:    {en:"About",       zh:"关于"},
+    nEdu:      {en:"Education",   zh:"教育经历"},
+    nExp:      {en:"Experience",  zh:"工作经历"},
+    nProj:     {en:"Projects",    zh:"科研项目"},
+    nPub:      {en:"Publications",zh:"学术成果"},
+    nContact:  {en:"Contact",     zh:"联系方式"},
+
+    hName:   {en:"LIU Ming", zh:"刘明"},
+    hDegree: {en:"(Ph.D.)",  zh:"（博士）"},
+    hRole:   {en:"Associate Professor", zh:"副教授"},
+    hAffil:  {en:"Department of Chinese and Bilingual Studies, The Hong Kong Polytechnic University",
+              zh:"香港理工大学中文及双语学系"},
+    chip1: {en:"Critical discourse analysis",     zh:"批评话语分析"},
+    chip2: {en:"Media studies",                   zh:"媒体研究"},
+    chip3: {en:"Corpus linguistics",              zh:"语料库语言学"},
+    chip4: {en:"Sociolinguistics",                zh:"社会语言学"},
+    chip5: {en:"Systemic functional linguistics", zh:"系统功能语言学"},
+    chip6: {en:"Intercultural communication",     zh:"跨文化传播"},
+    cEmail:  {en:"Email",  zh:"电子邮箱"},
+    cPhone:  {en:"Phone",  zh:"电话"},
+    cPhoneV: {en:"+852 6677 4907", zh:"+852 6677 4907"},
+    cOffice: {en:"Office", zh:"办公室"},
+    cOfficeV:{en:"HHB807, Hung Hom, Hong Kong", zh:"香港红磡 HHB807 室"},
+
+    sEdu: {en:"Education", zh:"教育经历"},
+    tEdu1:{en:"The Hong Kong Polytechnic University", zh:"香港理工大学"},
+    dtEdu1:{en:"Sept. 2010 – July 2014", zh:"2010年9月 – 2014年7月"},
+    dEdu1:{en:"Ph.D., Linguistics", zh:"语言学博士"},
+    tEdu1t:{en:"Thesis: <i>China Daily as a Competing and Hybridized Discourse: A Discourse-Analytic Approach</i> &nbsp;·&nbsp; Supervisor: Prof. Doreen Wu",
+            zh:"博士论文：《中国日报：一种竞争性与杂糅性的话语——话语分析视角》 &nbsp;·&nbsp; 导师：吴东英教授"},
+    tEdu2:{en:"Sun Yat-sen University", zh:"中山大学"},
+    dtEdu2:{en:"Sept. 2007 – July 2009", zh:"2007年9月 – 2009年7月"},
+    dEdu2:{en:"M.A., English Language and Literature", zh:"英语语言文学硕士"},
+    tEdu2t:{en:"Dissertation: <i>A Functional Analysis of English of-NGps</i> &nbsp;·&nbsp; Supervisor: Prof. Huang Guowen",
+            zh:"硕士论文：《英语of-NGp词组的功能分析》 &nbsp;·&nbsp; 导师：黄国文教授"},
+    tEdu3:{en:"Dalian University of Foreign Languages", zh:"大连外国语大学"},
+    dtEdu3:{en:"Sept. 2001 – July 2005", zh:"2001年9月 – 2005年7月"},
+    dEdu3:{en:"B.A., English Language and Culture", zh:"英语语言文化学士"},
+
+    sExp: {en:"Work Experience", zh:"工作经历"},
+    tExp1:{en:"The Hong Kong Polytechnic University", zh:"香港理工大学"},
+    dtExp1:{en:"Oct. 2020 – present", zh:"2020年10月 – 至今"},
+    dExp1:{en:"Department of Chinese and Bilingual Studies — Associate Professor", zh:"中文及双语学系 — 副教授"},
+    tExp2:{en:"Shanghai Jiao Tong University", zh:"上海交通大学"},
+    dtExp2:{en:"Mar. 2019 – Sept. 2020", zh:"2019年3月 – 2020年9月"},
+    dExp2:{en:"School of Foreign Languages — Associate Professor", zh:"外国语学院 — 副教授"},
+    tExp3:{en:"Sun Yat-sen University", zh:"中山大学"},
+    dtExp3:{en:"Aug. 2014 – Feb. 2019", zh:"2014年8月 – 2019年2月"},
+    dExp3:{en:"School of International Studies — Assistant &amp; Associate Professor", zh:"国际研究学院 — 助理教授、副教授"},
+    tExp4:{en:"Xi&rsquo;an International Studies University", zh:"西安外国语大学"},
+    dtExp4:{en:"July 2009 – Aug. 2010", zh:"2009年7月 – 2010年8月"},
+    dExp4:{en:"Department of English — English teacher", zh:"英语系 — 英语教师"},
+    tExp5:{en:"Xuhai College, China University of Mining Technologies", zh:"中国矿业大学徐海学院"},
+    dtExp5:{en:"July 2005 – Aug. 2007", zh:"2005年7月 – 2007年8月"},
+    dExp5:{en:"English Department — English teacher", zh:"英语系 — 英语教师"},
+
+    sProj: {en:"Research Projects", zh:"科研项目"},
+    subProj:{en:"All projects listed below were carried out as Principal Investigator.",
+             zh:"以下所有项目均由本人担任项目负责人（PI）。"},
+    fP1:{en:"General Research Fund, RGC of Hong Kong", zh:"香港研资局优配研究金（GRF）"},
+    pT1:{en:"The politics of recontextualizing the Hong Kong Basic Law in news media: A corpus-assisted discourse study",
+         zh:"新闻媒体中香港基本法再语境化的政治：语料库辅助话语研究"},
+    dP1:{en:"January 2023 – December 2025", zh:"2023年1月 – 2025年12月"},
+    fP2:{en:"National Social Science Fund of China", zh:"国家社会科学基金"},
+    pT2:{en:"A corpus-assisted discourse study of press representations of Hong Kong",
+         zh:"新闻报道中香港形象再现的语料库辅助话语研究"},
+    dP2:{en:"June 2017 – December 2020", zh:"2017年6月 – 2020年12月"},
+    fP3:{en:"MOE Project of Humanities and Social Sciences", zh:"教育部人文社会科学研究项目"},
+    pT3:{en:"A corpus-assisted discourse study of Western media&rsquo;s representations of Tibet",
+         zh:"西方媒体涉藏报道的语料库辅助话语研究"},
+    dP3:{en:"June 2016 – June 2019", zh:"2016年6月 – 2019年6月"},
+    fP4:{en:"Guangdong Department of Education, Degree &amp; Postgraduate Education Reform", zh:"广东省教育厅学位与研究生教育改革项目"},
+    pT4:{en:"International affairs oriented postgraduate education reform and practices",
+         zh:"面向国际事务的研究生教育改革与实践"},
+    dP4:{en:"January 2016 – December 2017", zh:"2016年1月 – 2017年12月"},
+    fP5:{en:"Fundamental Research Funds for the Central Universities", zh:"中央高校基本科研业务费专项资金"},
+    pT5:{en:"Media representations of international crises: An intercultural perspective",
+         zh:"媒体对国际危机的再现：跨文化视角"},
+    dP5:{en:"January 2015 – December 2017", zh:"2015年1月 – 2017年12月"},
+
+    sPub: {en:"Publications", zh:"学术成果"},
+    legEn:{en:"Journal articles in English", zh:"英文期刊论文"},
+    legCn:{en:"Journal articles in Chinese", zh:"中文期刊论文"},
+    legCh:{en:"Book chapters", zh:"书籍章节"},
+    legBk:{en:"Books", zh:"专著"},
+    fAll:{en:"All", zh:"全部"},
+    fEn:{en:"English articles", zh:"英文论文"},
+    fCn:{en:"Chinese articles", zh:"中文论文"},
+    fCh:{en:"Book chapters", zh:"书籍章节"},
+    fBk:{en:"Books", zh:"专著"},
+    pubEmpty:{en:"No publications match your search.", zh:"没有符合搜索条件的论文。"},
+
+    sContact: {en:"Contact", zh:"联系方式"},
+    hEmail:{en:"Email", zh:"电子邮箱"},
+    hMobile:{en:"Mobile", zh:"手机"},
+    hMobileV:{en:"+852 6677 4907", zh:"+852 6677 4907"},
+    hAddress:{en:"Address", zh:"地址"},
+    hAddressV:{en:"HHB807, Department of Language Science and Technology, The Hong Kong Polytechnic University, Hung Hom, Hong Kong",
+               zh:"香港理工大学语言科学与技术系，香港红磡，HHB807 室"},
+    fCopy:{en:"&copy; 2026 LIU Ming, Ph.D. All rights reserved.", zh:"&copy; 2026 刘明（博士）版权所有"},
+    fUpdated:{en:"Last updated: August 2026", zh:"最后更新：2026年8月"}
+  };
+
+  var TITLES = {
+    en: "LIU Ming — Associate Professor, The Hong Kong Polytechnic University",
+    zh: "刘明 — 香港理工大学副教授"
+  };
+
+  /* ---------- publication filtering ---------- */
   var list = document.getElementById('pubList');
   var items = Array.prototype.slice.call(list.getElementsByTagName('li'));
   var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter'));
@@ -376,6 +494,40 @@
   });
 
   search.addEventListener('input', apply);
+
+  /* ---------- language switching ---------- */
+  var toggle = document.getElementById('langToggle');
+  var lang = 'en';
+  try {
+    var saved = localStorage.getItem('siteLang');
+    if (saved === 'zh' || saved === 'en') { lang = saved; }
+  } catch (e) { /* localStorage unavailable */ }
+
+  function setLang(l) {
+    lang = l;
+    document.documentElement.lang = (l === 'zh') ? 'zh-CN' : 'en';
+    document.title = TITLES[l];
+    search.placeholder = (l === 'zh') ? '搜索论文…' : 'Search publications…';
+    var nodes = document.querySelectorAll('[data-i18n]');
+    for (var i = 0; i < nodes.length; i++) {
+      var entry = I18N[nodes[i].getAttribute('data-i18n')];
+      if (entry) {
+        if (nodes[i].innerHTML !== undefined && entry[l].indexOf('<') !== -1) {
+          nodes[i].innerHTML = entry[l];
+        } else {
+          nodes[i].textContent = entry[l];
+        }
+      }
+    }
+    toggle.textContent = (l === 'zh') ? 'English' : '中文';
+    try { localStorage.setItem('siteLang', l); } catch (e) { /* ignore */ }
+  }
+
+  toggle.addEventListener('click', function () {
+    setLang(lang === 'en' ? 'zh' : 'en');
+  });
+
+  setLang(lang); /* apply saved or default language on load */
 })();
 </script>
 </body>
