@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LIU Ming — Associate Professor, The Hong Kong Polytechnic University</title>
+<meta name="description" content="Personal website of LIU Ming, Associate Professor at the Department of Chinese and Bilingual Studies, The Hong Kong Polytechnic University. Research interests: critical discourse analysis, media studies, corpus linguistics.">
+<style>
+  :root{
+    --accent:#1a4b7a; --accent-light:#eef4fa; --accent-mid:#c5d8ea;
+    --text:#22303c; --muted:#5b6b7a; --bg:#fbfcfe; --card:#ffffff;
+    --border:#dde5ec; --gold:#b98a2f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+       color:var(--text);background:var(--bg);line-height:1.65;font-size:16px}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;color:var(--accent)}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* ---------- nav ---------- */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);
+      backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  nav .brand{font-family:Georgia,serif;font-weight:bold;font-size:1.05rem;color:var(--accent)}
+  nav ul{display:flex;gap:4px;list-style:none}
+  nav a.navlink{display:block;padding:6px 12px;border-radius:6px;font-size:.92rem;color:var(--text)}
+  nav a.navlink:hover{background:var(--accent-light);text-decoration:none;color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  header.hero{background:linear-gradient(135deg,#123a5e 0%,#1a4b7a 55%,#2a6597 100%);
+              color:#fff;padding:72px 0 56px}
+  header.hero h1{color:#fff;font-size:2.6rem;letter-spacing:.5px}
+  header.hero .role{font-size:1.15rem;margin-top:6px;color:#dbe8f4}
+  header.hero .affil{margin-top:2px;color:#b9cee2}
+  .chips{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.35);
+        padding:4px 14px;border-radius:999px;font-size:.86rem}
+  .contact-cards{margin-top:30px;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .ccard{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.28);
+         border-radius:10px;padding:12px 16px;font-size:.92rem}
+  .ccard b{display:block;font-size:.75rem;text-transform:uppercase;letter-spacing:1.2px;
+           color:#a9c6de;margin-bottom:2px}
+  .ccard a{color:#fff}
+
+  /* ---------- sections ---------- */
+  section{padding:56px 0 8px}
+  .sec-title{display:flex;align-items:baseline;gap:14px;margin-bottom:26px}
+  .sec-title h2{font-size:1.75rem}
+  .sec-title .line{flex:1;height:2px;background:var(--accent-mid);border-radius:2px}
+  .sec-sub{color:var(--muted);margin:-16px 0 24px;max-width:720px}
+
+  /* ---------- timeline ---------- */
+  .timeline{position:relative;margin-left:8px;padding-left:26px;border-left:2px solid var(--accent-mid)}
+  .titem{position:relative;padding-bottom:26px}
+  .titem:last-child{padding-bottom:0}
+  .titem::before{content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;
+                 border-radius:50%;background:var(--accent);border:2px solid #fff;
+                 box-shadow:0 0 0 2px var(--accent-mid)}
+  .titem h3{font-size:1.08rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px}
+  .titem .date{font-family:"Segoe UI",sans-serif;font-weight:600;font-size:.85rem;color:var(--gold);
+               white-space:nowrap;padding-top:4px}
+  .titem .detail{color:var(--muted);font-size:.95rem;margin-top:2px}
+  .titem .thesis{font-size:.93rem;margin-top:6px}
+  .titem .thesis i{color:var(--text)}
+
+  /* ---------- projects ---------- */
+  .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .pcard{background:var(--card);border:1px solid var(--border);border-radius:12px;
+         padding:18px 20px;box-shadow:0 1px 3px rgba(20,40,60,.05)}
+  .pcard .funder{font-weight:700;color:var(--accent);font-size:.95rem}
+  .pcard .grant{color:var(--gold);font-size:.83rem;margin-left:6px}
+  .pcard .ptitle{margin:6px 0 8px;font-size:.97rem}
+  .pcard .duration{font-size:.84rem;color:var(--muted);display:flex;align-items:center;gap:6px}
+  .pcard .duration::before{content:"🗓";font-size:.85rem}
+
+  /* ---------- publications ---------- */
+  .pub-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:20px}
+  .filter{border:1px solid var(--accent);background:#fff;color:var(--accent);cursor:pointer;
+          padding:7px 16px;border-radius:999px;font-size:.88rem;transition:.15s}
+  .filter:hover{background:var(--accent-light)}
+  .filter.active{background:var(--accent);color:#fff}
+  .filter .n{font-size:.78rem;opacity:.75;margin-left:4px}
+  #pubSearch{flex:1;min-width:200px;padding:8px 14px;border:1px solid var(--border);
+             border-radius:999px;font-size:.9rem;outline:none;background:#fff}
+  #pubSearch:focus{border-color:var(--accent-mid)}
+  #pubList{list-style:none}
+  #pubList li{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--accent);
+              border-radius:8px;padding:12px 18px;margin-bottom:10px;font-size:.93rem;
+              display:flex;gap:14px;align-items:flex-start}
+  #pubList li .year{flex:0 0 52px;text-align:center;font-family:Georgia,serif;font-weight:bold;
+                    color:var(--accent);font-size:1.02rem;padding-top:1px}
+  #pubList li .txt{flex:1}
+  #pubList li b{color:var(--accent)}
+  #pubList li.cat-cn{border-left-color:var(--gold)}
+  #pubList li.cat-cn .year{color:var(--gold)}
+  #pubList li.cat-ch{border-left-color:#5b8c5a}
+  #pubList li.cat-ch .year{color:#5b8c5a}
+  #pubList li.cat-bk{border-left-color:#8a5ba6}
+  #pubList li.cat-bk .year{color:#8a5ba6}
+  .pub-legend{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 16px;font-size:.82rem;color:var(--muted)}
+  .pub-legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;
+              margin-right:6px;vertical-align:-1px;background:var(--accent)}
+  .pub-legend .l-cn::before{background:var(--gold)}
+  .pub-legend .l-ch::before{background:#5b8c5a}
+  .pub-legend .l-bk::before{background:#8a5ba6}
+  #pubEmpty{display:none;color:var(--muted);font-style:italic;padding:12px 4px}
+
+  /* ---------- footer ---------- */
+  footer{margin-top:70px;background:#12314f;color:#b9cee2;padding:26px 0;font-size:.88rem}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:#fff}
+
+  @media (max-width:760px){
+    .projects{grid-template-columns:1fr}
+    nav ul{gap:0}
+    nav a.navlink{padding:6px 7px;font-size:.8rem}
+    header.hero h1{font-size:2rem}
+    #pubList li{flex-direction:row}
+  }
+  @media print{
+    nav,#pubToolsRow,footer{display:none}
+    #pubList li{border:none;padding:4px 0;break-inside:avoid}
+    section{padding:20px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">LIU Ming</div>
+    <ul>
+      <li><a class="navlink" href="#about">About</a></li>
+      <li><a class="navlink" href="#education">Education</a></li>
+      <li><a class="navlink" href="#experience">Experience</a></li>
+      <li><a class="navlink" href="#projects">Projects</a></li>
+      <li><a class="navlink" href="#publications">Publications</a></li>
+      <li><a class="navlink" href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="about">
+  <div class="wrap">
+    <h1>LIU Ming <span style="font-size:1.2rem;font-weight:normal">(Ph.D.)</span></h1>
+    <div class="role">Associate Professor</div>
+    <div class="affil">Department of Chinese and Bilingual Studies, The Hong Kong Polytechnic University</div>
+    <div class="chips">
+      <span class="chip">Critical discourse analysis</span>
+      <span class="chip">Media studies</span>
+      <span class="chip">Corpus linguistics</span>
+      <span class="chip">Sociolinguistics</span>
+      <span class="chip">Systemic functional linguistics</span>
+      <span class="chip">Intercultural communication</span>
+    </div>
+    <div class="contact-cards">
+      <div class="ccard"><b>Email</b><a href="mailto:ming1.liu@polyu.edu.hk">ming1.liu@polyu.edu.hk</a></div>
+      <div class="ccard"><b>Phone</b>+852 6677 4907</div>
+      <div class="ccard"><b>Office</b>HHB807, Hung Hom, Hong Kong</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ==================== EDUCATION ==================== -->
+  <section id="education">
+    <div class="sec-title"><h2>Education</h2><div class="line"></div></div>
+    <div class="timeline">
+      <div class="titem">
+        <h3>The Hong Kong Polytechnic University <span class="date">Sept. 2010 – July 2014</span></h3>
+        <div class="detail">Ph.D., Linguistics</div>
+        <div class="thesis">Thesis: <i>China Daily as a Competing and Hybridized Discourse: A Discourse-Analytic Approach</i> &nbsp;·&nbsp; Supervisor: Prof. Doreen Wu</div>
+      </div>
+      <div class="titem">
+        <h3>Sun Yat-sen University <span class="date">Sept. 2007 – July 2009</span></h3>
+        <div class="detail">M.A., English Language and Literature</div>
+        <div class="thesis">Dissertation: <i>A Functional Analysis of English of-NGps</i> &nbsp;·&nbsp; Supervisor: Prof. Huang Guowen</div>
+      </div>
+      <div class="titem">
+        <h3>Dalian University of Foreign Languages <span class="date">Sept. 2001 – July 2005</span></h3>
+        <div class="detail">B.A., English Language and Culture</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE ==================== -->
+  <section id="experience">
+    <div class="sec-title"><h2>Work Experience</h2><div class="line"></div></div>
+    <div class="timeline">
+      <div class="titem">
+        <h3>The Hong Kong Polytechnic University <span class="date">Oct. 2020 – present</span></h3>
+        <div class="detail">Department of Chinese and Bilingual Studies — Associate Professor</div>
+      </div>
+      <div class="titem">
+        <h3>Shanghai Jiao Tong University <span class="date">Mar. 2019 – Sept. 2020</span></h3>
+        <div class="detail">School of Foreign Languages — Associate Professor</div>
+      </div>
+      <div class="titem">
+        <h3>Sun Yat-sen University <span class="date">Aug. 2014 – Feb. 2019</span></h3>
+        <div class="detail">School of International Studies — Assistant &amp; Associate Professor</div>
+      </div>
+      <div class="titem">
+        <h3>Xi&rsquo;an International Studies University <span class="date">July 2009 – Aug. 2010</span></h3>
+        <div class="detail">Department of English — English teacher</div>
+      </div>
+      <div class="titem">
+        <h3>Xuhai College, China University of Mining Technologies <span class="date">July 2005 – Aug. 2007</span></h3>
+        <div class="detail">English Department — English teacher</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section id="projects">
+    <div class="sec-title"><h2>Research Projects</h2><div class="line"></div></div>
+    <p class="sec-sub">All projects listed below were carried out as Principal Investigator.</p>
+    <div class="projects">
+      <div class="pcard">
+        <div class="funder">General Research Fund, RGC of Hong Kong <span class="grant">#15614223</span></div>
+        <div class="ptitle">The politics of recontextualizing the Hong Kong Basic Law in news media: A corpus-assisted discourse study</div>
+        <div class="duration">January 2023 – December 2025</div>
+      </div>
+      <div class="pcard">
+        <div class="funder">National Social Science Fund of China <span class="grant">#17CYY065</span></div>
+        <div class="ptitle">A corpus-assisted discourse study of press representations of Hong Kong</div>
+        <div class="duration">June 2017 – December 2020</div>
+      </div>
+      <div class="pcard">
+        <div class="funder">MOE Project of Humanities and Social Sciences <span class="grant">#16YJC740046</span></div>
+        <div class="ptitle">A corpus-assisted discourse study of Western media&rsquo;s representations of Tibet</div>
+        <div class="duration">June 2016 – June 2019</div>
+      </div>
+      <div class="pcard">
+        <div class="funder">Guangdong Department of Education, Degree &amp; Postgraduate Education Reform <span class="grant">#21000-18822160</span></div>
+        <div class="ptitle">International affairs oriented postgraduate education reform and practices</div>
+        <div class="duration">January 2016 – December 2017</div>
+      </div>
+      <div class="pcard">
+        <div class="funder">Fundamental Research Funds for the Central Universities <span class="grant">#1409101-21000-31610105</span></div>
+        <div class="ptitle">Media representations of international crises: An intercultural perspective</div>
+        <div class="duration">January 2015 – December 2017</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PUBLICATIONS ==================== -->
+  <section id="publications">
+    <div class="sec-title"><h2>Publications</h2><div class="line"></div></div>
+    <div class="pub-legend">
+      <span>Journal articles in English</span>
+      <span class="l-cn">Journal articles in Chinese</span>
+      <span class="l-ch">Book chapters</span>
+      <span class="l-bk">Books</span>
+    </div>
+    <div class="pub-tools" id="pubToolsRow">
+      <button class="filter active" data-cat="all">All<span class="n" id="nAll"> (53)</span></button>
+      <button class="filter" data-cat="en">English articles<span class="n" id="nEn"> (36)</span></button>
+      <button class="filter" data-cat="cn">Chinese articles<span class="n" id="nCn"> (9)</span></button>
+      <button class="filter" data-cat="ch">Book chapters<span class="n" id="nCh"> (7)</span></button>
+      <button class="filter" data-cat="bk">Books<span class="n" id="nBk"> (1)</span></button>
+      <input type="text" id="pubSearch" placeholder="Search publications&hellip;" aria-label="Search publications">
+    </div>
+    <ul id="pubList">
+      <li class="cat-en" data-cat="en"><span class="year">2026</span><span class="txt"><b>Liu, M</b>., Liu, J., &amp; Wang, Z. (2026). Language, gender and news media: a corpus-assisted critical discourse study of binary gender representations in China Daily. Humanities and Social Sciences Communications. https://doi.org/10.1057/s41599-026-08845-x</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2026</span><span class="txt">Chen, F.F., Ngai, C.S.B., &amp; <b>Liu, M</b>. (2026). Self-positioning in space science communication: A corpus-assisted discourse study. Plos One. https://doi.org/10.1371/journal.pone.0353260</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2026</span><span class="txt">Dong, H., Ngai, S. B. C., Yi, L., &amp; <b>Liu, M</b>. (2026). Emotional attitudes toward the use of ChatGPT in U.S. higher education: a corpus-assisted discourse study. Higher Education. https://doi.org/10.1007/s10734-026-01624-2</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2025</span><span class="txt"><b>Liu, M</b>. (2025). Recontextualizing the basic law in South China morning post: a diachronic corpus-assisted discourse study. International Journal of Legal Discourse. https://doi.org/10.1515/ijld-2025-2014</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2026</span><span class="txt"><b>Liu, M</b>., Li, H., &amp; He, W. (2026). Discursive construction of ethical business leadership in China: A corpus-assisted ecological discourse study of online public mourning discourse. Language Sciences, 116. https://doi.org/10.1016/j.langsci.2026.101828</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2025</span><span class="txt"><b>Liu, M</b>., Wang, G., &amp; Zhao, R. (2025). "Double Bind" with a twist: A corpus-assisted discourse study of gender performances of male and female entrepreneurs on Twitter (now X). Plos One, 20(8), e0331400.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2025</span><span class="txt">Feng, J., Lu, W., <b>Liu, M</b>., et al. (2025). Climate discourses of petroleum corporations in China and the United States: A comparative stakeholder analysis. English for Specific Purposes, 80: 44-59.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2025</span><span class="txt"><b>Liu, M</b>. and Li, J. (2025). When science communication meets politics: A corpus-assisted discourse study of the Congressional hearing on TikTok. Discourse &amp; Society. DOI: 10.1177/09579265251335034. 09579265251335034.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2025</span><span class="txt"><b>Liu, M</b>., Ngai, C.S.B. and Li, H. (2025). Entrepreneur or capitalist? Journal of Language and Politics. DOI: https://doi.org/10.1075/jlp.24243.liu.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2025</span><span class="txt">Huang, J. and <b>Liu, M</b>. (2025) Metaphorical Framing of Climate Change in Chinese and American News Media: A Corpus-assisted Discourse Study. Critical Arts. DOI: 10.1080/02560046.2025.2470677. 1-20.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">n.d.</span><span class="txt">Huang, Jingyi &amp; <b>Ming Liu</b>. 2025. Between Nationalism and Globalism: Framing Climate Change Risks in Chinese and American Newspapers. Corpus-based Studies across Humanities 2(2). 311-332.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2024</span><span class="txt"><b>Liu, M</b>. (2024). Towards a ‘synergy’ of text mining and critical discourse analysis: A corpus-assisted discourse study of imagining Hong Kong’s relations to China in Hong Kong political discourse. Digital Scholarship in the Humanities. DOI: 10.1093/llc/fqae010</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2024</span><span class="txt">Wang, Z., <b>Liu, M</b>., &amp; Liu, K. (2024). Utilizing machine learning techniques for classifying translated and non-translated corporate annual reports. Applied Artificial Intelligence, 38(1), 2340393. doi:10.1080/08839514.2024.2340393</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2023</span><span class="txt"><b>Liu, M</b>. &amp; Cheng, Y.Q. (2023). Blessing or curse? Recontextualizing “996” in China’s overwork debate. Critical Discourse Studies. DOI: https://doi.org/10.1080/17405904.2023.2289448</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2024</span><span class="txt"><b>Liu, M</b>., &amp; Huang, J. (2024). Framing responsibilities for climate change in Chinese and American   newspapers: A corpus-assisted discourse study. Journalism, 25(8): 1792-1811.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2023</span><span class="txt"><b>Liu, M</b>. (2023). Blame-avoiding strategies for a digital scandal: A critical discourse analysis of Mark Zuckerberg’s Congressional hearings. Pragmatics and Society. DOI: https://doi.org/10.1075/ps.21063.liu</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>., Zhao, R.N. &amp; Ngai, C. (2022). Vaccines, media and politics: A corpus-assisted discourse study of press representations of the safety and efficacy of COVID-19 vaccines. PLoS One, 17(12): e0279500.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>., Zhao, R.N. &amp; Feng, J.Y. (2022). Gender performances on social media: A comparative study of three top key opinion leaders in China. Frontiers in Psychology. doi: 10.3389/fpsyg.2022.1046887</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>. (2022). Stancetaking in Hong Kong political discourse: A corpus-assisted discourse study. Chinese Language and Discourse, 13(1), 79-98.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt">Wang, G., <b>Liu, M</b>., &amp; Xin, Y. (2022). Categorisations of developed and developing countries in UN news on climate change. Social Semiotics, 1-17.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>., &amp; Huang, J. (2022). “Climate change” vs. “global warming”: A corpus-assisted discourse analysis of two popular terms in The New York Times. Journal of World Languages, 8(1), 34-55.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>., &amp; Wang, G. (2022). Language, politics and media: The Hong Kong protests. Journal of Language and Politics, 21(1): 1-16.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt"><b>Liu, M</b>., &amp; Ma, J. (2022). The politics of fear in Hong Kong protest representations: A corpus-assisted discourse study. Journal of Language and Politics, 21(1): 37-59.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2022</span><span class="txt">Gu, C. &amp; <b>Liu, M</b>. (2022). A review on Systemic Functional Linguistics and Translation Studies. Journal of Pragmatics, 200: 49-51.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2021</span><span class="txt"><b>Liu, M</b>., &amp; Lin, L. (2021). “One Country, Two Systems”: A Corpus-assisted Discourse Analysis of the Politics of Recontextualization in British, American and Chinese Newspapers. Critical Arts, 35(3): 17-34.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2021</span><span class="txt">Lin, K.L. &amp; <b>Liu, M</b>.* (2021). Towards a part-of-speech (PoS) gram approach to English academic writing: A case study of research introductions in different disciplines. Lingua, 254: 103052.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2020</span><span class="txt"><b>Liu, M</b>. &amp; Zhong, J. (2020) Between national and local: Identity representations of post-colonial Hong Kong in a local English newspaper. Discourse, Context &amp; Media, 36: 100401</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2019</span><span class="txt"><b>Liu, M</b>. &amp; Jiang, C. (2019). Constant fear, but lingering nostalgia: British press representations of post-colonial Hong Kong 20 years on. Discourse &amp; Communication, 13(6): 630-646.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2019</span><span class="txt"><b>Liu, M</b>. (2019). New trend, but old story: A corpus-assisted discourse study of Tibet imaginations in dominant Western media. Critical Arts, 33(1): 1-14.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2018</span><span class="txt"><b>Liu, M</b>. &amp; Zhang, Y. (2018). Discursive constructions of scientific (un)certainty about the health risks of China's air pollution: A corpus-assisted discourse study. Language &amp; Communication, 60, 1-10.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2017</span><span class="txt"><b>Liu, M</b>. &amp; Li, C.Y. (2017). Competing discursive constructions of China’s smog in Chinese and Anglo-American English-language newspapers: A corpus-assisted discourse study. Discourse &amp; Communication, 11 (4): 386-403.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2017</span><span class="txt"><b>Liu, M</b>. (2017). “Contesting the cynicism of neoliberalism”: A corpus-assisted discourse study of press representations of the Sino-US currency dispute. Journal of Language and Politics, 16(2), 242-263.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2015</span><span class="txt"><b>Liu, M</b>. (2015) Scapegoat or manipulated victim? Metaphorical representations of the Sino-US currency dispute in Chinese and American financial news. Text &amp; Talk, 35(3): 337-357.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2015</span><span class="txt"><b>Liu, M</b>. &amp; Wu, D. (2015). Discursive construction of corporate identity on the web: An intercultural perspective. Intercultural Communication Studies, XXIV (1): 50-65.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2014</span><span class="txt"><b>Liu, M</b>. &amp; Feng, J. (2014). A review on Political Discourse Analysis: A Method for Advanced Students. Discourse &amp; Communication, 8: 237-238.</span></li>
+      <li class="cat-en" data-cat="en"><span class="year">2014</span><span class="txt">Doreen W, Huang, Y &amp; <b>Liu, M</b>. (2014). Competing and hybridized discourses in Chinese news reporting: Case studies of three key newspapers in Southern China. Journal of Multicultural Discourse Studies, 9(3): 1-18.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2025</span><span class="txt">Lin, L. &amp; Liu M. (2025). Towards a Part-of-Speech (PoS) Gram Approach to Corpus-based Phraseology. Contemporary Foreign Language Studies, (4): 15-27.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2025</span><span class="txt"><b>Liu, M</b>. (2025) Research frontiers and trends in international ecolinguistics. Modern Foreign Languages, 48(6): 854-864.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2023</span><span class="txt"><b>Liu, M</b>. (2023). Discursive construction of China’s ecological images: A corpus-assisted discourse study. Modern Foreign Languages, 46(1): 83-91.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2017</span><span class="txt"><b>Liu, M</b>. &amp; Chang, C.G. (2017). Corpus-assisted discourse studies: Origins, features, and applications. Journal of Fujian Normal University (Philosophy and Social Sciences Edition), (1): 90-96.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2016</span><span class="txt"><b>Liu, M</b>. (2016). Transitive analysis, ergative analysis and their applications in critical discourse analysis. Journal of Foreign Languages, 39(5): 66-74.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2016</span><span class="txt">Huang, G.W. &amp; <b>Liu, M</b>. (2016). Introduction to Key Terms in Discourse Analysis. Beijing: Foreign Language Teaching and Research Press.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2015</span><span class="txt"><b>Liu, M</b>. &amp; Wang, S.C. (2015). A corpus-assisted discourse study of automobile advertisements and social change. Journal of Xi’an International Studies University, (1): 55-58.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2014</span><span class="txt"><b>Liu, M</b>. (2014). Forms, functions and ideologies in news discourse. Modern Foreign Languages, (3): 340-348.</span></li>
+      <li class="cat-cn" data-cat="cn"><span class="year">2013</span><span class="txt"><b>Liu, M</b>. (2013). A critical Study of emotional expressions in news discourse. Journal of Zhejiang University of Media and Communications, 20(6): 2-8.</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">2025</span><span class="txt"><b>Liu, M</b>. &amp; Yang, Y. (2025) <em>(In press)</em>. Communicating crises during the pandemic: A corpus-assisted discourse study of CSR reports by top corporations of China and the US. In C. Chang &amp; H. Yu (eds.). Explorations in Systemic Functional Linguistics. Springer.</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">2025</span><span class="txt"><b>Liu, M</b>. &amp; Yi, X. (2025) <em>(In press)</em>. Environmental discourse studies in China: A critical review. In R. Poole, D.F. Virdis, J. Hampton &amp; A. Ghorbanpour (eds.). The Bloomsbury Handbook of Ecolinguistics. Bloomsbury.</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">2025</span><span class="txt"><b>Liu, M</b>. &amp; Zhao, R.N. (2025). Gender performances of male and female politicians on social media: A corpus-assisted discourse study. In H.Q. Zhu, X.R. Liu &amp; D.B. Feng (eds.). Social Identity and Discourses in China’s Digital Communication.  London: Routledge.</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">n.d.</span><span class="txt"><b>Liu, M</b>. &amp; Huang, J.Y. <em>(Accepted)</em>. Incorporating text mining into critical discourse studies: A corpus-assisted discourse study of press representations of climate change in China. In B. Forchtner &amp; F. Zappettini (eds.). Handbook on Critical Discourse Studies. Edward Elgar.</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">n.d.</span><span class="txt"><b>Liu, M</b>. <em>(Accepted)</em>. Corpus-based analytic Methods (基于语料库的研究方法). In J.Y. Feng, D. WU &amp; S. Liang (eds.). Cross-cultural Corporate Discourse Studies (跨文化商务话语研究). Beijing: Foreign Language Teaching and Research Press.</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">2022</span><span class="txt"><b>Liu, M</b>. (2022). Sociolinguistics in China. In The Oxford Research Encyclopedia of Linguistics. Oxford: Oxford University Press. doi: https://doi.org/10.1093/acrefore/9780199384655.013.914</span></li>
+      <li class="cat-ch" data-cat="ch"><span class="year">2021</span><span class="txt"><b>Liu, M</b>. (2021). One City, Two Stories: Competing Discursive Constructions of    Postcolonial Hong Kong in Chinese and American Newspapers. In J. Schmied, C. Chang, &amp; M. Hofmann (Eds.), Working with Discourses: Corpus and Systemic Functional Perspectives (pp. 143-160). Göttingen: Cuvillier Verlag.</span></li>
+      <li class="cat-bk" data-cat="bk"><span class="year">2026</span><span class="txt">Huang, G.W., Zhao, R.H., <b>Liu, M</b>., Zhou, W.J. (In Press) (2026). Ecological Discourse Analysis in Chinese Context. Beijing: Higher Education Press.</span></li>
+    </ul>
+    <p id="pubEmpty">No publications match your search.</p>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section id="contact">
+    <div class="sec-title"><h2>Contact</h2><div class="line"></div></div>
+    <div class="timeline" style="border:none;padding-left:0;margin-left:0">
+      <div class="titem" style="padding-bottom:8px"><h3>Email <span class="date" style="display:none"></span></h3>
+        <div class="detail"><a href="mailto:ming1.liu@polyu.edu.hk">ming1.liu@polyu.edu.hk</a></div></div>
+      <div class="titem" style="padding-bottom:8px"><h3>Mobile</h3>
+        <div class="detail">+852 6677 4907</div></div>
+      <div class="titem" style="padding-bottom:8px"><h3>Address</h3>
+        <div class="detail">HHB807, Department of Language Science and Technology, The Hong Kong Polytechnic University, Hung Hom, Hong Kong</div></div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>&copy; 2026 LIU Ming, Ph.D. All rights reserved.</div>
+    <div>Last updated: August 2026</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var list = document.getElementById('pubList');
+  var items = Array.prototype.slice.call(list.getElementsByTagName('li'));
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.filter'));
+  var search = document.getElementById('pubSearch');
+  var empty = document.getElementById('pubEmpty');
+  var activeCat = 'all';
+
+  function apply() {
+    var q = search.value.trim().toLowerCase();
+    var shown = 0;
+    items.forEach(function (li) {
+      var okCat = (activeCat === 'all') || (li.getAttribute('data-cat') === activeCat);
+      var okText = !q || li.textContent.toLowerCase().indexOf(q) !== -1;
+      var show = okCat && okText;
+      li.style.display = show ? '' : 'none';
+      if (show) { shown++; }
+    });
+    empty.style.display = shown ? 'none' : 'block';
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      buttons.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      apply();
+    });
+  });
+
+  search.addEventListener('input', apply);
+})();
+</script>
+</body>
+</html>
